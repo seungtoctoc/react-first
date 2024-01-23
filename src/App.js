@@ -4,6 +4,7 @@ import './App.css';
 import HelloWord from './components/HelloWorld';
 import CaptionImage from './components/CaptionImage';
 import Blink from './components/Blink';
+import Count from './components/Count'
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
 
       <Blink text="ahahahaha">
       </Blink>
+
+      <Count>
+      </Count>
+
     </div>
   );
 }
