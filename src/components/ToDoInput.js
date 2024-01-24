@@ -20,7 +20,7 @@ export default function ToDoInput({addItem}) {
                 onChange={(e) => setInputValue(e.target.value)}
             />
             
-            <button onClick={click}>
+            <button onClick={click} style={{marginLeft:'10px'}}>
                 Enter
             </button>
         </div>

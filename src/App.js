@@ -12,8 +12,6 @@ function App() {
   function addItem({item, color}) {
     const updatedItemList = [...itemList, {item:item, color:color}]
     setItemList(updatedItemList);
-
-
   };
 
   function deleteItem(target) {
@@ -21,6 +19,17 @@ function App() {
     setItemList(updatedItemList);
   }
 
+  function changeColor(target) {
+    const updatedItemList = itemList.map((item, i) => {
+      if (i === target) {
+        return {...item, color: (item.color + 1) % 5}
+      } 
+      else {
+        return item;
+      }
+    });
+    setItemList(updatedItemList);
+  }
 
 
   return (
@@ -29,7 +38,7 @@ function App() {
       <ToDoInput addItem={addItem}>
       </ToDoInput>
 
-      <ToDoItem itemList={itemList} deleteItem={deleteItem}>
+      <ToDoItem itemList={itemList} deleteItem={deleteItem} changeColor={changeColor}>
       </ToDoItem>
       
     </div>
