@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 
-export default function Todo() {
+export default function ToDoInput({addItem}) {
     const [inputValue, setInputValue] = useState('');
-    const [itemList, setItemList] = useState([]);
 
-    const click = () => {
+    function click() {
         if (inputValue.trim() !== '') {
-            setItemList([...itemList, inputValue]);
+            addItem({item:inputValue, color:0})
             setInputValue('');
         }
     }
@@ -20,15 +19,10 @@ export default function Todo() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
             />
+            
             <button onClick={click}>
                 Enter
             </button>
-
-            <ul>
-                {itemList.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
         </div>
     )
 }
