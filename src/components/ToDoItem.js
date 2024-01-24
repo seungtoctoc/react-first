@@ -1,12 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 export default function ToDoItem(props) {
     const itemList = props.itemList;
     const deleteItem = props.deleteItem;
     const changeColor = props.changeColor;
+    const modifyItem = props.modifyItem;
 
     const colorList = ['#ff6961', '#77dd77', '#fdfd96', '#84b6f4', '#fdcae1'];
     
+    function clickText() {
+
+    }
     
     return (
         <div>

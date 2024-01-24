@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 
-import logo from './logo.svg';
 import './App.css';
 
 import ToDoInput from './components/ToDoInput';
@@ -31,16 +30,28 @@ function App() {
     setItemList(updatedItemList);
   }
 
+  function modifyItem({target, newItem}) {
+    const updatedItemList = itemList.map((item, i) => {
+      if (i === target) {
+        return {item: newItem, color: item.color}
+      } 
+      else {
+        return item;
+      }
+    });
+    setItemList(updatedItemList);
+  };
+
 
   return (
     <div className="App" style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'60px'}}>
       <ToDoInput addItem={addItem}>
       </ToDoInput>
 
-      <ToDoItem itemList={itemList} deleteItem={deleteItem} changeColor={changeColor}>
+      <ToDoItem itemList={itemList} deleteItem={deleteItem} changeColor={changeColor} modifyItem={modifyItem}>
       </ToDoItem>
     </div>
   );
 }
-
+ 
 export default App;
