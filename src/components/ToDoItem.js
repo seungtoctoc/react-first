@@ -8,7 +8,6 @@ export default function ToDoItem(props) {
     const colorList = ['#ff6961', '#77dd77', '#fdfd96', '#84b6f4', '#fdcae1'];
     
     
-
     return (
         <div>
             {itemList.map((item, index) => (

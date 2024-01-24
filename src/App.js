@@ -34,13 +34,11 @@ function App() {
 
   return (
     <div className="App" style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'60px'}}>
-
       <ToDoInput addItem={addItem}>
       </ToDoInput>
 
       <ToDoItem itemList={itemList} deleteItem={deleteItem} changeColor={changeColor}>
       </ToDoItem>
-      
     </div>
   );
 }
